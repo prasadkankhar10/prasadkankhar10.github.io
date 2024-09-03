@@ -30,10 +30,10 @@
 
     <!-- Home Section -->
     <section id="home" class="home-section">
-        <div class="spline-container">
-            <spline-viewer url="https://prod.spline.design/WE17cvfLbrqrM9kA/scene.splinecode"></spline-viewer>
-
+        <div id="large-header" class="large-header">
+            <canvas id="demo-canvas"></canvas>
         </div>
+    
         <div class="header-box">
             <div class="header-container">
                 <div class="image-container">
@@ -47,7 +47,7 @@
                     <p class="description">Passionate B.Tech student<br>game developer.</p>
                 </div>
             </div>
-            
+    
             <div class="social-media-container">
                 <a href="https://twitter.com/yourhandle" target="_blank" class="social-media-icon twitter">
                     <img src="images/twitter.svg" alt="Twitter">
@@ -63,8 +63,9 @@
                 </a>
             </div>
         </div>
-        
     </section>
+    
+    
 
     <!-- Projects Section -->
     <section id="projects" class="projects-section">
@@ -368,6 +369,7 @@
         </div>
     </section>
 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.0/gsap.min.js"></script>
     <script src="scripts.js"></script>
 </body>
 </html>
