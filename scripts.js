@@ -1,9 +1,9 @@
 // Dynamic Text Functionality
 const dynamicText = document.getElementById('dynamic-text');
 const textArray = [
-    "a game developer.",
-    "a B.Tech student.",
-    "a problem solver."
+    "a game developer",
+    "a B.Tech student",
+    "a problem solver"
 ];
 let index = 0;
 
