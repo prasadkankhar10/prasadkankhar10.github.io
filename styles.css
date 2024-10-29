@@ -694,8 +694,6 @@ body {
     width: 100px;
     height: 100px;
     border-radius: 10px;
-    margin-right: 20px;
-    margin-bottom: 10px;
 }
 
 .info {
@@ -1183,3 +1181,82 @@ p {
     justify-content: center;
     margin-top: 20px;
 }
+
+/* Main header container */
+.header {
+    position: relative;
+    overflow: hidden;
+    top: 50%;
+    left: 25%;
+}
+
+/* Gallery container styling */
+.gallery {
+    --s: 130px; /* control the size */
+    --g: 10px;  /* control the gap */
+    display: grid;
+    margin: calc(var(--s) + var(--g));
+  }
+  
+  .gallery > img {
+    grid-area: 1/1;
+    width: var(--s);
+    aspect-ratio: 0.866;
+    object-fit: cover;
+    clip-path: polygon(0% 25%,0% 75%,50% 100%,100% 75%,100% 25%,50% 0);
+    transform: translate(var(--_x,0),var(--_y,0)) scale(var(--_t,1));
+    cursor: pointer;
+    filter: grayscale(80%);
+    transition: .2s linear;
+  }
+  .gallery > img:hover {
+    filter: grayscale(0);
+    z-index: 1;
+    --_t: 1.2;
+  }
+  
+  .gallery > img:nth-child(1) {--_x: calc(-100% - var(--g))}
+  .gallery > img:nth-child(7) {--_x: calc( 100% + var(--g))}
+  .gallery > img:nth-child(3),
+  .gallery > img:nth-child(5) {--_y: calc(-75% - .87*var(--g))}
+  .gallery > img:nth-child(4),
+  .gallery > img:nth-child(6) {--_y: calc( 75% + .87*var(--g))}
+  .gallery > img:nth-child(3),
+  .gallery > img:nth-child(4) {--_x: calc(-50% - .5*var(--g))}
+  .gallery > img:nth-child(5), 
+  .gallery > img:nth-child(6) {--_x: calc( 50% + .5*var(--g))}
+  /* Media Queries for Responsiveness */
+@media (max-width: 800px) {
+    .gallery {
+        --s: 100px; /* Adjust the size for smaller screens */
+        --g: 8px;   /* Adjust the gap */
+    }
+}
+
+@media (max-width: 600px) {
+    .gallery {
+        --s: 80px; /* Further adjust the size for very small screens */
+        --g: 6px;  /* Further adjust the gap */
+    }
+    
+    .gallery > img {
+        aspect-ratio: 1; /* Change aspect ratio to square */
+    }
+}
+
+@media (max-width: 400px) {
+    .gallery {
+        --s: 60px; /* Adjust the size for extra small screens */
+        --g: 4px;  /* Adjust the gap */
+    }
+}
+
+
+/* Prevent horizontal scrolling */
+html, body {
+    overflow-x: hidden;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
