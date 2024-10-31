@@ -614,6 +614,12 @@ body {
         font-size: 30px;
     }
 }
+.des{
+    font-size: 20px;
+    color: #FFD700;
+    font-weight: 300;
+    margin-top: 20px;
+}
 
 
 /* About Section */
