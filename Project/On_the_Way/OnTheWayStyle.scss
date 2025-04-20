@@ -1,0 +1,245 @@
+/* Define color variables for easy customization */
+:root {
+  --color-one: #333; /* Main Blue from the logo */
+  --color-two: #333; /* Main Red from the truck */
+  --color-three: #4ac98500; /* Main Green from the background */
+  --color-four: #ffdc28; /* Yellow from the balloons */
+  --text-color: #ffffff; /* White text */
+  --background-color: var(--color-three); /* Default background color */
+
+  /* Define dimensions for elements */
+  --mem-width: min(38em, calc(100vw - 4em));
+  --mem-height: min(36em, calc(100vw - 6em));
+
+  /* Animation and transition durations */
+  --slide-duration: 0.9s;
+  --text-duration: 0.9s;
+  --text-l-height: 1.5em;
+}
+
+* {
+  /* Set box-sizing for all elements */
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  /* Define main font and layout for the page */
+  font-family: "BIZ UDGothic", sans-serif;
+  min-height: 100vh;
+  scroll-behavior: smooth;
+  text-rendering: optimizeSpeed;
+  line-height: 1.5;
+  color: var(--text-color); /* Text color */
+  background-color: var(--background-color); /* Background color */
+
+  /* Define background layers */
+  background-image: url("OnThewayImg/Project_Logo.webp"), /* Logo as background */ url("OnThewayImg/Project_Logo.webp"),
+    /* Second logo as background */
+      linear-gradient(
+        90deg,
+        var(--color-one),
+        var(--color-two),
+        var(--color-three)
+      );
+  background-repeat: no-repeat, repeat, repeat;
+  background-position: 0% 100%, 0 0, center;
+  background-blend-mode: lighten;
+  background-attachment: fixed;
+  background-size: 100vmin, auto, auto;
+
+  /* Animation for the background */
+  animation: start1 2s ease-in-out;
+}
+
+/* Animation for background slide effect */
+@keyframes start1 {
+  0% {
+    background-position: -100% 0, 0 0, center;
+  }
+  100% {
+    background-position: 0 100%, 0 0, center;
+  }
+}
+
+main {
+  /* Layout and font size for the main content area */
+  margin: 1em auto;
+  width: var(--mem-width);
+  max-width: 100%;
+  font-size: 0.7rem;
+}
+
+.head {
+  /* Style for header text */
+  display: block;
+  width: 100%;
+  height: auto;
+  margin: 1em 0;
+  text-transform: uppercase;
+  text-align: center;
+  color: var(--text-color);
+}
+
+ul.item-list {
+  /* Style for the item list container */
+  max-width: var(--mem-width);
+  margin: 0 auto;
+  list-style: none;
+  padding: 0;
+}
+
+li {
+  /* Margin for each list item */
+  margin-bottom: 1em;
+}
+
+label {
+  /* Style for label elements */
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr auto;
+  grid-template-rows: auto auto;
+  grid-template-areas: "h4 control" "content content";
+  margin-bottom: 1em;
+  border-radius: 0.5em;
+  background-color: var(--color-two); /* Label background color */
+  transition: all 0.35s ease-in-out;
+  padding: 0.5em;
+  cursor: pointer;
+}
+
+label > h4 {
+  /* Style for headings inside labels */
+  height: var(--text-l-height);
+  overflow: hidden;
+  transition: height var(--text-duration) ease-in-out;
+  grid-area: h4;
+  font-size: 1.2em;
+  margin: 0;
+}
+
+label > .control {
+  /* Style for the control icon in labels */
+  grid-area: control;
+  display: block;
+  width: var(--text-l-height);
+  height: var(--text-l-height);
+  // background: url(https://lidachk.github.io/cssBayan/cssBayan/assets/control.svg); /* Small logo */
+  filter: invert(1%) sepia(42%) saturate(1672%) hue-rotate(167deg)
+    brightness(101%) contrast(87%);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  transition: all 0.3s ease;
+  opacity: 0;
+}
+
+label > .slider {
+  /* Style for slider elements */
+  grid-area: content;
+  margin-top: 1em;
+  overflow: hidden;
+  transition: all var(--slide-duration);
+  height: 0;
+}
+
+input {
+  /* Hide the default checkbox/radio buttons */
+  display: none;
+}
+
+/* Styling for checked inputs */
+input:checked + label > .slider {
+  transition: height var(--slide-duration) ease-in-out;
+  height: auto;
+  background-color: var(--color-one); /* Background for open sliders */
+}
+
+input:checked + label > h4 {
+  height: auto;
+  transition: height var(--text-duration) ease-in-out;
+}
+
+input:checked + label > .control {
+  transform: rotate(-1.5turn);
+}
+
+/* Styles for hover effects */
+@media (hover: hover) {
+  ul:hover .control {
+    opacity: 1;
+  }
+
+  input:not(:checked) + label:hover > .control {
+    transform: rotate(1.25turn);
+    filter: drop-shadow(
+      0 -0.2em 0.5em var(--color-four)
+    ); /* Yellow drop-shadow */
+  }
+
+  label:hover > .control {
+    opacity: 1;
+  }
+}
+
+/* Styles for medium screen sizes */
+@media all and (min-width: 820px) and (max-width: 1022px) {
+  body {
+    background-image: url("OnThewayImg/Project_Logo.webp"), /* PNG background for medium screens */ url("1"),
+      linear-gradient(
+        90deg,
+        var(--color-one),
+        var(--color-two),
+        var(--color-three)
+      );
+  }
+
+  label {
+    padding: 1em;
+  }
+
+  main {
+    font-size: 1rem;
+  }
+}
+
+/* Styles for larger screen sizes */
+@media all and (min-width: 1023px) {
+  :root {
+    /* Increase main element dimensions */
+    --mem-width: 38rem;
+    --mem-height: 36rem;
+  }
+
+  body {
+    background-image: url("OnThewayImg/Project_Logo.webp"),
+      /* PNG background for large screens */ url("OnThewayImg/Project_Logo.webp"),
+      linear-gradient(
+        90deg,
+        var(--color-one),
+        var(--color-two),
+        var(--color-three)
+      );
+  }
+
+  .head {
+    margin: 2em 0;
+    text-align: center;
+    text-transform: uppercase;
+    color: #ffd700;
+  }
+
+  label {
+    padding: 1rem;
+  }
+
+  body {
+    background-size: min(calc(50vw - 20rem), 100vmin), auto, auto;
+  }
+
+  main {
+    font-size: 1.5rem;
+  }
+}

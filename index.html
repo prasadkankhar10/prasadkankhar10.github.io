@@ -1,0 +1,444 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Prasad Anil Kankhar | Portfolio</title>
+    <!-- Add this before </head> -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body data-theme="light">
+    <section class="home-section parallax">
+      <canvas id="butterflyCanvas"></canvas>
+      <div class="content-container">
+        <div class="code-display">
+          <pre><code class="cpp-code">#include &lt;iostream&gt;
+
+using namespace std;
+
+class PrasadAnilKankhar {
+public:
+    string name = "Prasad Anil Kankhar";
+    string skills[4] = {"C++", "3D Graphics", 
+                      "Mathematics", "AI"};
+    int experience = 1;
+
+    void display() {
+        cout << "👋 Hello World!" << endl;
+        cout << "🔧 Specializing in: ";
+        for(auto skill : skills) {
+            cout << skill << " ";
+        }
+        cout << endl << "🚀 " << experience 
+             << "+ years experience" << endl;
+    }
+};
+
+int main() {
+    PrasadAnilKankhar prasad;
+    prasad.display();
+    return 0;
+}</code></pre>
+        </div>
+        <div class="profile-container">
+          <div class="prasad-photo">
+            <div class="photo-frame">
+              <img src="" alt="Prasad" />
+            </div>
+          </div>
+          <div class="social-links">
+            <a href="#" class="social-icon github" data-tooltip="GitHub">
+              <i class="fab fa-github"></i>
+            </a>
+            <a href="#" class="social-icon linkedin" data-tooltip="LinkedIn">
+              <i class="fab fa-linkedin"></i>
+            </a>
+            <a href="#" class="social-icon twitter" data-tooltip="Twitter">
+              <i class="fab fa-twitter"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- new section -->
+    <section class="project">
+      <main>
+        <ul class="slider">
+          <li
+            class="item"
+            style="
+              background-image: url('Project/On_the_Way/OnTheWayImg/Project_Logo.webp');
+            "
+          >
+            <div class="content">
+              <h2 class="title">"On the Way"</h2>
+              <p class="description">
+                An open-world delivery game built in Unreal Engine, featuring
+                smart AI, dynamic delivery points, and optimized mobile
+                graphics.
+              </p>
+              <button
+                onclick="window.open('project/On_the_Way/OnTheWay.html', '_blank')"
+              >
+                Read More
+              </button>
+            </div>
+          </li>
+
+          <li
+            class="item"
+            style="background-image: url('https://i.redd.it/tc0aqpv92pn21.jpg')"
+          >
+            <div class="content">
+              <h2 class="title">"School Website Project"</h2>
+              <p class="description">
+                A modern and responsive website built for a school as part of
+                the Committee Engagement Project (CEP).
+              </p>
+              <button
+                onclick="window.location.href='https://prasadkankhar.me/school-website'"
+              >
+                Read More
+              </button>
+            </div>
+          </li>
+
+          <li
+            class="item"
+            style="
+              background-image: url('https://wharferj.files.wordpress.com/2015/11/bio_north.jpg');
+            "
+          >
+            <div class="content">
+              <h2 class="title">"File Organizer Script"</h2>
+              <p class="description">
+                A Python script that automatically organizes downloads into
+                categorized folders, improving file management.
+              </p>
+              <button
+                onclick="window.location.href='https://github.com/prasadkankhar10/file-organizer'"
+              >
+                Read More
+              </button>
+            </div>
+          </li>
+
+          <li
+            class="item"
+            style="
+              background-image: url('https://images7.alphacoders.com/878/878663.jpg');
+            "
+          >
+            <div class="content">
+              <h2 class="title">"Combat AI System"</h2>
+              <p class="description">
+                A smart AI combat system for Unreal Engine, featuring dynamic
+                enemy behavior and fluid combat mechanics.
+              </p>
+              <button
+                onclick="window.location.href='https://prasadkankhar.me/combat-ai'"
+              >
+                Read More
+              </button>
+            </div>
+          </li>
+
+          <li
+            class="item"
+            style="
+              background-image: url('https://theawesomer.com/photos/2017/07/simon_stalenhag_the_electric_state_6.jpg');
+            "
+          >
+            <div class="content">
+              <h2 class="title">"Portfolio Website"</h2>
+              <p class="description">
+                A personal portfolio showcasing my projects, skills, and
+                achievements, built with HTML, SCSS, and JavaScript.
+              </p>
+              <button onclick="window.location.href='https://prasadkankhar.me'">
+                Read More
+              </button>
+            </div>
+          </li>
+
+          <li
+            class="item"
+            style="
+              background-image: url('https://da.se/app/uploads/2015/09/simon-december1994.jpg');
+            "
+          >
+            <div class="content">
+              <h2 class="title">"Unreal Engine C++ Learning"</h2>
+              <p class="description">
+                A series of C++ projects exploring Unreal Engine development,
+                focusing on gameplay mechanics and performance optimization.
+              </p>
+              <button
+                onclick="window.location.href='https://github.com/prasadkankhar10/unreal-cpp'"
+              >
+                Read More
+              </button>
+            </div>
+          </li>
+        </ul>
+        <nav class="nav">
+          <ion-icon class="btn prev" name="arrow-back-outline"></ion-icon>
+          <ion-icon class="btn next" name="arrow-forward-outline"></ion-icon>
+        </nav>
+      </main>
+    </section>
+
+    <!-- new section -->
+
+    <section class="about-me">
+      <div class="lab-panel" id="labPanel">
+        <div class="title">GAME DEVELOPER PROFILE</div>
+        <div class="character-name">Prasad Anil Kankhar</div>
+        <a href="mailto:Prasadkankhar5@gmail.com" class="play-button"
+          >CONTACT ME</a
+        >
+
+        <div class="stats-grid">
+          <div class="stat-block">
+            <div class="highlight">Game Development</div>
+            <div class="stat-value">
+              Unreal Engine Expert<br />(Blueprints & C++)<br />Mobile & PC
+              Games
+            </div>
+          </div>
+          <div class="stat-block">
+            <div class="highlight">AI Specialization</div>
+            <div class="stat-value">
+              Smart Enemy AI<br />Pathfinding Algorithms<br />Combat Systems
+            </div>
+          </div>
+          <div class="stat-block">
+            <div class="highlight">Technical Skills</div>
+            <div class="stat-value">
+              Git | Blender | Adobe Suite<br />Visual Studio | Performance
+              Optimization
+            </div>
+          </div>
+        </div>
+
+        <ul class="submenu">
+          <li class="submenu-option">
+            <span class="highlight">Current Project:</span> "On the Way" -
+            Open-world delivery game with advanced AI systems
+          </li>
+          <li class="submenu-option">
+            <span class="highlight">Education:</span> Maharashtra Institute of
+            Technology, Aurangabad
+          </li>
+          <li class="submenu-option">
+            <span class="highlight">Philosophy:</span> Creating meaningful
+            experiences through innovative game design
+          </li>
+          <li class="submenu-option">
+            <span class="highlight">Goals:</span> Develop large-scale
+            interactive worlds and AI systems
+          </li>
+        </ul>
+
+        <div class="bottom-row">
+          <div class="bottom-item">
+            <div class="highlight">Contact</div>
+            +91 9067452648<br />
+            Prasadkankhar5 @gmail.com
+          </div>
+          <div class="bottom-item">
+            <div class="highlight">Tools</div>
+            Unreal Engine<br />
+            Blender<br />
+            Adobe Suite
+          </div>
+          <div class="bottom-item">
+            <div class="highlight">Interests</div>
+            Game Design Theory<br />
+            Interactive Storytelling<br />
+            Player Experience
+          </div>
+          <div class="bottom-item">
+            <div class="highlight">Location</div>
+            Maharashtra, India
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- new section for time line -->
+
+    <section class="design-section">
+      <div class="timeline">
+        <div class="timeline-empty"></div>
+
+        <div class="timeline-middle">
+          <div class="timeline-circle"></div>
+        </div>
+        <div class="timeline-component timeline-content">
+          <h3>2012</h3>
+          <p>
+            Began school at Kai Vitthalrao Ghuge Primary and High School,
+            Hingoli, Maharashtra (1st Grade).
+          </p>
+        </div>
+
+        <div class="timeline-empty"></div>
+
+        <div class="timeline-middle">
+          <div class="timeline-circle"></div>
+        </div>
+        <div class="timeline-component timeline-content">
+          <h3>2022</h3>
+          <p>
+            Completed 10th grade at Kai Vitthalrao Ghuge Primary and High
+            School.
+          </p>
+        </div>
+
+        <div class="timeline-empty"></div>
+
+        <div class="timeline-middle">
+          <div class="timeline-circle"></div>
+        </div>
+        <div class="timeline-component timeline-content">
+          <h3>2022-2023</h3>
+          <p>
+            Completed 11th and 12th grades at Nutan Junior College, Buldana,
+            Waghora, Maharashtra.
+          </p>
+        </div>
+
+        <div class="timeline-empty"></div>
+
+        <div class="timeline-middle">
+          <div class="timeline-circle"></div>
+        </div>
+        <div class="timeline-component timeline-content">
+          <h3>2023</h3>
+          <p>
+            Started undergraduate degree at Maharashtra Institute of Technology,
+            Chhatrapati Sambhajinagar.
+          </p>
+        </div>
+
+        <div class="timeline-empty"></div>
+
+        <div class="timeline-middle">
+          <div class="timeline-circle"></div>
+        </div>
+        <div class="timeline-component timeline-content">
+          <h3>2027</h3>
+          <p>Expected graduation from Maharashtra Institute of Technology.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- new section -->
+    <!-- Floating Island Contact Form -->
+    <section class="game-world-contact">
+      <div class="island-container">
+        <div class="floating-platform"></div>
+    
+        <form action="https://api.web3forms.com/submit" method="POST" class="hologram-form">
+          <input type="hidden" name="access_key" value="2d731a3a-6a25-4836-85e3-e085b1c40fdb" />
+    
+          <h2 class="neon-title">🔮 Summon Connection</h2>
+    
+          <div class="input-orbit">
+            <div class="particle-field"></div>
+            <input type="text" name="name" id="name" required />
+            <label for="name">Mage Name</label>
+            <div class="orbit-ring"></div>
+          </div>
+    
+          <div class="input-orbit">
+            <div class="particle-field"></div>
+            <input type="email" name="email" id="email" required />
+            <label for="email">Crystal Mail</label>
+            <div class="orbit-ring"></div>
+          </div>
+    
+          <div class="input-orbit textarea-orbit">
+            <div class="particle-field"></div>
+            <textarea name="message" id="message" required></textarea>
+            <label for="message">Arcane Message</label>
+            <div class="orbit-ring"></div>
+          </div>
+    
+          <button type="submit" class="quantum-button">
+            <span>Transmit</span>
+            <div class="energy-pulse"></div>
+          </button>
+        </form>
+      </div>
+
+      <div class="social-dock">
+        <a
+          href="https://github.com/prasadkankhar10"
+          class="social-node"
+          aria-label="GitHub"
+        >
+          <div class="node-core">
+            <i class="fab fa-github"></i>
+            <div class="node-aura"></div>
+          </div>
+        </a>
+        <a
+          href="https://www.linkedin.com/in/prasad-kankhar-9b1601255/"
+          class="social-node"
+          aria-label="LinkedIn"
+        >
+          <div class="node-core">
+            <i class="fab fa-linkedin"></i>
+            <div class="node-aura"></div>
+          </div>
+        </a>
+        <a
+          href="https://www.instagram.com/prasadkankhar10/"
+          class="social-node"
+          aria-label="Instagram"
+        >
+          <div class="node-core">
+            <i class="fab fa-instagram"></i>
+            <div class="node-aura"></div>
+          </div>
+        </a>
+      </div>
+    </div>
+  </div>
+    </section>
+    
+    
+    
+
+       
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Oxanium:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+    />
+
+    <script
+      type="module"
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"
+    ></script>
+    <script
+      nomodule
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"
+    ></script>
+    <script src="scripts.js"></script>
+  </body>
+</html>
